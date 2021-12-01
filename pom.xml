@@ -126,20 +126,6 @@
                     <commitIdGenerationMode>full</commitIdGenerationMode>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.kreyssel.maven.plugins</groupId>
-                <artifactId>encoding-detector-maven-plugin</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-                <executions>
-                    <execution>
-                        <id>ensure-encoding</id>
-                        <phase>validation</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
     
