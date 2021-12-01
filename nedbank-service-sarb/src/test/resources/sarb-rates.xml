@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ArrayOfRate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/SarbWebApi.DTOs">
+    <Rate>
+        <Date>2021-10-31</Date>
+        <FormatDate>MMM, yyyy</FormatDate>
+        <FormatNumber>0.0</FormatNumber>
+        <Name>CPI</Name>
+        <SectionId>HPRIR</SectionId>
+        <SectionName>Inflation rates</SectionName>
+        <TimeseriesCode>CPI1000F</TimeseriesCode>
+        <UpDown>0</UpDown>
+        <Value>5.0000</Value>
+    </Rate>
+    <Rate>
+        <Date>2021-10-31</Date>
+        <FormatDate>MMM, yyyy</FormatDate>
+        <FormatNumber>0.0</FormatNumber>
+        <Name>PPI</Name>
+        <SectionId>HPRIR</SectionId>
+        <SectionName>Inflation rates</SectionName>
+        <TimeseriesCode>PPI1000F</TimeseriesCode>
+        <UpDown>1</UpDown>
+        <Value>8.1162</Value>
+    </Rate>
+    <Rate>
+        <Date>2021-11-30</Date>
+        <FormatDate>yyyy-MM-dd</FormatDate>
+        <FormatNumber>0.00</FormatNumber>
+        <Name>Repo rate</Name>
+        <SectionId>HPRINT</SectionId>
+        <SectionName>Interest rates</SectionName>
+        <TimeseriesCode>MMSD008A</TimeseriesCode>
+        <UpDown>0</UpDown>
+        <Value>3.7500</Value>
+    </Rate>
+    <Rate>
+        <Date>2021-11-30</Date>
+        <FormatDate>yyyy-MM-dd</FormatDate>
+        <FormatNumber>0.00</FormatNumber>
+        <Name>Prime lending rate (predominant rate)</Name>
+        <SectionId>HPRINT</SectionId>
+        <SectionName>Interest rates</SectionName>
+        <TimeseriesCode>MMSD001A</TimeseriesCode>
+        <UpDown>0</UpDown>
+        <Value>7.2500</Value>
+    </Rate>
+    <Rate>
+        <Date>2021-11-29</Date>
+        <FormatDate>yyyy-MM-dd</FormatDate>
+        <FormatNumber>0.00</FormatNumber>
+        <Name>7.75% 2023 (R2023) (closing yields)</Name>
+        <SectionId>HPRINT</SectionId>
+        <SectionName>Interest rates</SectionName>
+        <TimeseriesCode>MMSD427A</TimeseriesCode>
+        <UpDown>-1</UpDown>
+        <Value>5.1250</Value>
+    </Rate>
+    <Rate>
+        <Date>2021-11-29</Date>
+        <FormatDate>yyyy-MM-dd</FormatDate>
+        <FormatNumber>0.00</FormatNumber>
+        <Name>10,5% 2026 (R186) (closing yields)</Name>
+        <SectionId>HPRINT</SectionId>
+        <SectionName>Interest rates</SectionName>
+        <TimeseriesCode>MMSD426A</TimeseriesCode>
+        <UpDown>-1</UpDown>
+        <Value>8.1150</Value>
+    </Rate>
+    <Rate>
+        <Date>2021-11-29</Date>
+        <FormatDate>yyyy-MM-dd</FormatDate>
+        <FormatNumber>0.000</FormatNumber>
+        <Name>Sabor</Name>
+        <SectionId>HPRINT</SectionId>
+        <SectionName>Interest rates</SectionName>
+        <TimeseriesCode>MMSD719A</TimeseriesCode>
+        <UpDown>-1</UpDown>
+        <Value>3.6740</Value>
+    </Rate>
+    <Rate>
+        <Date>2021-11-30</Date>
+        <FormatDate>yyyy-MM-dd</FormatDate>
+        <FormatNumber>0.0000</FormatNumber>
+        <Name>Rand per US Dollar</Name>
+        <SectionId>HPREXCH</SectionId>
+        <SectionName>Exchange rates</SectionName>
+        <TimeseriesCode>EXCX135D</TimeseriesCode>
+        <UpDown>-1</UpDown>
+        <Value>16.1259</Value>
+    </Rate>
+    <Rate>
+        <Date>2021-11-30</Date>
+        <FormatDate>yyyy-MM-dd</FormatDate>
+        <FormatNumber>0.0000</FormatNumber>
+        <Name>Rand per British Pound</Name>
+        <SectionId>HPREXCH</SectionId>
+        <SectionName>Exchange rates</SectionName>
+        <TimeseriesCode>EXCZ001D</TimeseriesCode>
+        <UpDown>-1</UpDown>
+        <Value>21.5119</Value>
+    </Rate>
+    <Rate>
+        <Date>2021-11-30</Date>
+        <FormatDate>yyyy-MM-dd</FormatDate>
+        <FormatNumber>0.0000</FormatNumber>
+        <Name>Rand per Euro</Name>
+        <SectionId>HPREXCH</SectionId>
+        <SectionName>Exchange rates</SectionName>
+        <TimeseriesCode>EXCZ002D</TimeseriesCode>
+        <UpDown>1</UpDown>
+        <Value>18.2860</Value>
+    </Rate>
+    <Rate>
+        <Date>2021-11-30</Date>
+        <FormatDate>yyyy-MM-dd</FormatDate>
+        <FormatNumber>0.00</FormatNumber>
+        <Name>Nominal effective exchange rate</Name>
+        <SectionId>HPRNEE</SectionId>
+        <SectionName>Nominal Effective</SectionName>
+        <TimeseriesCode>EER4504A</TimeseriesCode>
+        <UpDown>-1</UpDown>
+        <Value>81.7207</Value>
+    </Rate>
+</ArrayOfRate>
