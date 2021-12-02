@@ -40,7 +40,8 @@ public class SarbService {
 
         final Optional<Rate> repo = rates.stream().filter(p -> RateEnum.REPO.getJsonKey().equals(p.name())).findFirst();
 
-        final Optional<Rate> prime = rates.stream().filter(p -> RateEnum.PRIME.getJsonKey().equals(p.name())).findFirst();
+        final Optional<Rate> prime = rates.stream().filter(p -> RateEnum.PRIME.getJsonKey().equals(p.name()))
+                .findFirst();
 
         final Cache sarbCache = manager.getCache(cacheName);
         sarbCache.put(RateEnum.CPI, cpi.get().rateValue());
