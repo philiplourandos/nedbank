@@ -6,7 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import za.co.nedbank.services.sarb.model.Rate;
 
-@FeignClient(url = "${za.co.nedbank.service.sarb.url}")
+@FeignClient(name = "sarb-client-service", url = "${za.co.nedbank.service.sarb.url}")
 public interface SarbClient {
 
     @GetMapping(path = { "/SarbWebApi/WebIndicators/HomePageRates" }, consumes = MediaType.APPLICATION_JSON_VALUE)
