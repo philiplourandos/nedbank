@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 @SpringBootTest
 @ActiveProfiles({"test"})
-public class ConServiceTest {
+public class CronServiceTest {
     @Test
     public void givenConfiguredCron_whenTrigger_thenRetrieveSarbValuesAndCache() throws Exception {
         fail();
