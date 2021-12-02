@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/SarbWebApi/WebIndicators/HomePageRates"
+    },
+    "response": {
+        "status": 200,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "bodyFileName": "rates.txt"
+    }
+}

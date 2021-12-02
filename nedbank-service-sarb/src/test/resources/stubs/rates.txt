@@ -1,0 +1,111 @@
+[{
+        "Name": "CPI",
+        "SectionId": "HPRIR",
+        "SectionName": "Inflation rates",
+        "TimeseriesCode": "CPI1000F",
+        "Date": "2021-10-31",
+        "Value": 5.0000,
+        "UpDown": 0,
+        "FormatNumber": "0.0",
+        "FormatDate": "MMM, yyyy"
+    }, {
+        "Name": "PPI",
+        "SectionId": "HPRIR",
+        "SectionName": "Inflation rates",
+        "TimeseriesCode": "PPI1000F",
+        "Date": "2021-10-31",
+        "Value": 8.1162,
+        "UpDown": 1,
+        "FormatNumber": "0.0",
+        "FormatDate": "MMM, yyyy"
+    }, {
+        "Name": "Repo rate",
+        "SectionId": "HPRINT",
+        "SectionName": "Interest rates",
+        "TimeseriesCode": "MMSD008A",
+        "Date": "2021-12-02",
+        "Value": 3.7500,
+        "UpDown": 0,
+        "FormatNumber": "0.00",
+        "FormatDate": "yyyy-MM-dd"
+    }, {
+        "Name": "Prime lending rate (predominant rate)",
+        "SectionId": "HPRINT",
+        "SectionName": "Interest rates",
+        "TimeseriesCode": "MMSD001A",
+        "Date": "2021-12-02",
+        "Value": 7.2500,
+        "UpDown": 0,
+        "FormatNumber": "0.00",
+        "FormatDate": "yyyy-MM-dd"
+    }, {
+        "Name": "7.75% 2023 (R2023) (closing yields)",
+        "SectionId": "HPRINT",
+        "SectionName": "Interest rates",
+        "TimeseriesCode": "MMSD427A",
+        "Date": "2021-12-01",
+        "Value": 4.9500,
+        "UpDown": -1,
+        "FormatNumber": "0.00",
+        "FormatDate": "yyyy-MM-dd"
+    }, {
+        "Name": "10,5% 2026 (R186) (closing yields)",
+        "SectionId": "HPRINT",
+        "SectionName": "Interest rates",
+        "TimeseriesCode": "MMSD426A",
+        "Date": "2021-12-01",
+        "Value": 8.0400,
+        "UpDown": 1,
+        "FormatNumber": "0.00",
+        "FormatDate": "yyyy-MM-dd"
+    }, {
+        "Name": "Sabor",
+        "SectionId": "HPRINT",
+        "SectionName": "Interest rates",
+        "TimeseriesCode": "MMSD719A",
+        "Date": "2021-12-01",
+        "Value": 3.8100,
+        "UpDown": 1,
+        "FormatNumber": "0.000",
+        "FormatDate": "yyyy-MM-dd"
+    }, {
+        "Name": "Rand per US Dollar",
+        "SectionId": "HPREXCH",
+        "SectionName": "Exchange rates",
+        "TimeseriesCode": "EXCX135D",
+        "Date": "2021-12-02",
+        "Value": 15.9299,
+        "UpDown": 1,
+        "FormatNumber": "0.0000",
+        "FormatDate": "yyyy-MM-dd"
+    }, {
+        "Name": "Rand per British Pound",
+        "SectionId": "HPREXCH",
+        "SectionName": "Exchange rates",
+        "TimeseriesCode": "EXCZ001D",
+        "Date": "2021-12-02",
+        "Value": 21.1597,
+        "UpDown": 1,
+        "FormatNumber": "0.0000",
+        "FormatDate": "yyyy-MM-dd"
+    }, {
+        "Name": "Rand per Euro",
+        "SectionId": "HPREXCH",
+        "SectionName": "Exchange rates",
+        "TimeseriesCode": "EXCZ002D",
+        "Date": "2021-12-02",
+        "Value": 18.0255,
+        "UpDown": 1,
+        "FormatNumber": "0.0000",
+        "FormatDate": "yyyy-MM-dd"
+    }, {
+        "Name": "Nominal effective exchange rate",
+        "SectionId": "HPRNEE",
+        "SectionName": "Nominal Effective",
+        "TimeseriesCode": "EER4504A",
+        "Date": "2021-12-02",
+        "Value": 82.7864,
+        "UpDown": -1,
+        "FormatNumber": "0.00",
+        "FormatDate": "yyyy-MM-dd"
+    }]
