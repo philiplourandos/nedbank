@@ -1,2 +1,9 @@
 ## YAML Template.
 ---
+za:
+    co:
+        nedbank:
+            service:
+                sarb:
+                    url: https://localhost
+                    cron: 10 * * * * ?
