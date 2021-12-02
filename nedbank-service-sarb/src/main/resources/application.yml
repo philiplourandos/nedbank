@@ -1,0 +1,14 @@
+## YAML Template.
+---
+spring:
+    cache:
+        cache-names: sarb-rates
+        caffeine:
+            spec: maximumSize=10
+za:
+    co:
+        nedbank:
+            service:
+                sarb:
+                    url: https://custom.resbank.co.za
+                    cron: 0 0 23 * * ?
