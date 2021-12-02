@@ -35,7 +35,7 @@ public class CronServiceTest {
 
         final Cache sarbCache = manager.getCache(cacheName);
 
-        await().atMost(300, TimeUnit.SECONDS).untilAsserted(() -> {
+        await().atMost(30, TimeUnit.SECONDS).untilAsserted(() -> {
             assertEquals(cpi, sarbCache.get(RateEnum.CPI.getCacheKey(), BigDecimal.class));
             assertEquals(ppi, sarbCache.get(RateEnum.PPI.getCacheKey(), BigDecimal.class));
             assertEquals(repo, sarbCache.get(RateEnum.REPO.getCacheKey(), BigDecimal.class));
