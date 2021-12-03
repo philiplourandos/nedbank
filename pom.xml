@@ -170,6 +170,7 @@
                     </dependency>
                 </dependencies>
                 <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
                     <suppressionsLocation>suppressions.xml</suppressionsLocation>
                 </configuration>
                 <executions>
