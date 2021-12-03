@@ -5,5 +5,4 @@ za:
         nedbank:
             service:
                 sarb:
-                    url: https://localhost
                     cron: 10 * * * * ?

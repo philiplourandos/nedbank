@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
@@ -14,11 +15,11 @@ import org.springframework.test.context.ActiveProfiles;
 import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
+@SpringBootTest(properties = {"za.co.nedbank.service.sarb.url=http://localhost:${wiremock.server.port}"},
+        webEnvironment = WebEnvironment.NONE)
 @ActiveProfiles({"test"})
-@AutoConfigureWireMock(stubs = {"classpath:/stubs"})
+@AutoConfigureWireMock(files = {"classpath:/stubs"}, port = 0)
 public class CronServiceTest {
-    
     @Autowired
     private CacheManager manager;
     
@@ -35,7 +36,7 @@ public class CronServiceTest {
 
         final Cache sarbCache = manager.getCache(cacheName);
 
-        await().atMost(30, TimeUnit.SECONDS).untilAsserted(() -> {
+        await().atMost(15, TimeUnit.SECONDS).untilAsserted(() -> {
             assertEquals(cpi, sarbCache.get(RateEnum.CPI.getCacheKey(), BigDecimal.class));
             assertEquals(ppi, sarbCache.get(RateEnum.PPI.getCacheKey(), BigDecimal.class));
             assertEquals(repo, sarbCache.get(RateEnum.REPO.getCacheKey(), BigDecimal.class));
