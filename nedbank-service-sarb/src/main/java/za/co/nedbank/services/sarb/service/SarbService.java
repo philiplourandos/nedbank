@@ -14,7 +14,7 @@ import za.co.nedbank.services.sarb.client.SarbClient;
 import za.co.nedbank.services.sarb.model.Rate;
 
 @Service
-public class SarbService {
+public final class SarbService {
     private static final Logger LOG = LoggerFactory.getLogger(SarbService.class);
 
     private final SarbClient client;
@@ -23,9 +23,9 @@ public class SarbService {
     @Value("${spring.cache.cache-names}")
     private String cacheName;
 
-    public SarbService(SarbClient client, CacheManager manager) {
-        this.client = client;
-        this.manager = manager;
+    public SarbService(final SarbClient sarbClient, final CacheManager cacheManager) {
+        this.client = sarbClient;
+        this.manager = cacheManager;
     }
 
     @Scheduled(cron = "${za.co.nedbank.service.sarb.cron}")

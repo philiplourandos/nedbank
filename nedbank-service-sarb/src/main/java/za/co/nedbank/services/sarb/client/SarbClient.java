@@ -9,6 +9,7 @@ import za.co.nedbank.services.sarb.model.Rate;
 @FeignClient(name = "sarb-client-service", url = "${za.co.nedbank.service.sarb.url}")
 public interface SarbClient {
 
-    @GetMapping(path = { "/SarbWebApi/WebIndicators/HomePageRates" }, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = { "/SarbWebApi/WebIndicators/HomePageRates" },
+            consumes = MediaType.APPLICATION_JSON_VALUE)
     public List<Rate> getRates();
 }
