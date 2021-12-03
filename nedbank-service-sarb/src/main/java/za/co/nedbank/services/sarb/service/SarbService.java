@@ -48,10 +48,10 @@ public final class SarbService {
                 .findFirst();
 
         final Cache sarbCache = manager.getCache(cacheName);
-        sarbCache.put(RateEnum.CPI, cpi.get().rateValue());
-        sarbCache.put(RateEnum.PPI, ppi.get().rateValue());
-        sarbCache.put(RateEnum.PRIME, prime.get().rateValue());
-        sarbCache.put(RateEnum.REPO, repo.get().rateValue());
+        sarbCache.put(RateEnum.CPI.getCacheKey(), cpi.get().rateValue());
+        sarbCache.put(RateEnum.PPI.getCacheKey(), ppi.get().rateValue());
+        sarbCache.put(RateEnum.PRIME.getCacheKey(), prime.get().rateValue());
+        sarbCache.put(RateEnum.REPO.getCacheKey(), repo.get().rateValue());
 
         LOG.info("Populated cache with SARB rates");
         LOG.info("CPI: [{}], PPI: [{}], REPO: [{}], PRIME: [{}]", cpi.get().rateValue(),
