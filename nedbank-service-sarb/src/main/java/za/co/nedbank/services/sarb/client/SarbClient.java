@@ -11,5 +11,5 @@ public interface SarbClient {
 
     @GetMapping(path = { "/SarbWebApi/WebIndicators/HomePageRates" },
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public List<Rate> getRates();
+    List<Rate> getRates();
 }
