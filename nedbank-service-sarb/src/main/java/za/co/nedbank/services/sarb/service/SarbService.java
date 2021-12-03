@@ -54,5 +54,7 @@ public final class SarbService {
         sarbCache.put(RateEnum.REPO, repo.get().rateValue());
 
         LOG.info("Populated cache with SARB rates");
+        LOG.info("CPI: [{}], PPI: [{}], REPO: [{}], PRIME: [{}]", cpi.get().rateValue(),
+                ppi.get().rateValue(), repo.get().rateValue(), prime.get().rateValue());
     }
 }
