@@ -59,7 +59,7 @@ public final class SarbService {
                 ppi.get().rateValue(), repo.get().rateValue(), prime.get().rateValue());
     }
 
-    public Optional<BigDecimal> getRate(RateEnum rateEnum){
+    public Optional<BigDecimal> getRate(final RateEnum rateEnum) {
 
         final Cache reqCache = manager.getCache(cacheName);
 
