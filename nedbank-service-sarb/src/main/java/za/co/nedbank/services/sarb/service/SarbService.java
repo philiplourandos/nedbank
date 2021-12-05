@@ -1,5 +1,6 @@
 package za.co.nedbank.services.sarb.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -57,4 +58,14 @@ public final class SarbService {
         LOG.info("CPI: [{}], PPI: [{}], REPO: [{}], PRIME: [{}]", cpi.get().rateValue(),
                 ppi.get().rateValue(), repo.get().rateValue(), prime.get().rateValue());
     }
+
+    public Optional<BigDecimal> getRate(RateEnum rateEnum){
+
+        final Cache reqCache = manager.getCache(cacheName);
+
+        return Optional.ofNullable(reqCache.get(rateEnum.getCacheKey(), BigDecimal.class));
+
+    }
+
+
 }
