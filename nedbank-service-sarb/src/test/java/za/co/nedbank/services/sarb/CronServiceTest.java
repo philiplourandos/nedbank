@@ -28,8 +28,6 @@ public class CronServiceTest {
     
     @Test
     public void givenConfiguredCron_whenTrigger_thenRetrieveSarbValuesAndCache() throws Exception {
-       
-       
         final Cache sarbCache = manager.getCache(cacheName);
 
         await().atMost(40, TimeUnit.SECONDS).untilAsserted(() -> {
