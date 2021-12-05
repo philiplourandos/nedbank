@@ -15,7 +15,7 @@ import za.co.nedbank.services.sarb.client.SarbClient;
 import za.co.nedbank.services.sarb.model.Rate;
 
 @Service
-public final class SarbService {
+public class SarbService {
     private static final Logger LOG = LoggerFactory.getLogger(SarbService.class);
 
     private final SarbClient client;
