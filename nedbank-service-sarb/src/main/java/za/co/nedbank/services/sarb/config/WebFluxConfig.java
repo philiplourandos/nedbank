@@ -13,7 +13,7 @@ import za.co.nedbank.services.sarb.service.SarbService;
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class WebFluxConfig {
     @Bean
     public RouterFunction<ServerResponse> ratesRoute(final SarbService service) {
