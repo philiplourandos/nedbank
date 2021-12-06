@@ -27,7 +27,7 @@ public class WebFluxConfig {
     @Bean
     public Decoder feignDecoder(final ObjectMapper mapper) {
         final HttpMessageConverter jacksonConverter = new MappingJackson2HttpMessageConverter(mapper);
-        ObjectFactory<HttpMessageConverters> objectFactory = () -> new HttpMessageConverters(jacksonConverter);
+        final ObjectFactory<HttpMessageConverters> objectFactory = () -> new HttpMessageConverters(jacksonConverter);
 
         return new ResponseEntityDecoder(new SpringDecoder(objectFactory));
     }
