@@ -1,16 +1,22 @@
 package za.co.nedbank.services.sarb;
 
+import java.util.Collections;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.mockito.Mockito.when;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
+import za.co.nedbank.services.sarb.client.SarbClient;
+
+import static org.mockito.Mockito.when;
 
 @SpringBootTest(properties = {"za.co.nedbank.service.sarb.url=8888"},
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -26,7 +32,10 @@ public class RetrieveRatesTest {
     
     @Value("${spring.cache.cache-names}")
     private String cacheName;
-    
+
+    @MockBean
+    private SarbClient sarbClient;
+
     @BeforeEach
     public void setup() {
         final Cache sarbCache = manager.getCache(cacheName);
@@ -34,6 +43,8 @@ public class RetrieveRatesTest {
         sarbCache.put(RateEnum.PPI.getCacheKey(), TestConst.PPI);
         sarbCache.put(RateEnum.PRIME.getCacheKey(), TestConst.PRIME);
         sarbCache.put(RateEnum.REPO.getCacheKey(), TestConst.REPO);
+
+        when(sarbClient.getRates()).thenReturn(Collections.EMPTY_LIST);
     }
     
     @Test

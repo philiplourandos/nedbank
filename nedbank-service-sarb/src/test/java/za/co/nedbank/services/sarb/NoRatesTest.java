@@ -1,12 +1,17 @@
 package za.co.nedbank.services.sarb;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import java.util.Collections;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
+import za.co.nedbank.services.sarb.client.SarbClient;
+
+import static org.mockito.Mockito.when;
 
 @SpringBootTest(properties = {"za.co.nedbank.service.sarb.url=8888"},
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -15,6 +20,14 @@ public class NoRatesTest {
 
     @Autowired
     private WebTestClient client;
+
+    @MockBean
+    private SarbClient sarbClient;
+
+    @BeforeEach
+    public void setup() {
+        when(sarbClient.getRates()).thenReturn(Collections.EMPTY_LIST);
+    }
 
     @Test
     public void givenNoLoadedRepoRate_whenRequestMade_thenReturn204WithNoBody() throws Exception {
