@@ -8,12 +8,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 @SpringBootTest(properties = {"za.co.nedbank.service.sarb.url=8888"},
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles({"test"})
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 public class RetrieveRatesTest {
 
     @Autowired
@@ -33,7 +35,7 @@ public class RetrieveRatesTest {
         sarbCache.put(RateEnum.PRIME.getCacheKey(), TestConst.PRIME);
         sarbCache.put(RateEnum.REPO.getCacheKey(), TestConst.REPO);
     }
-
+    
     @Test
     public void givenLoadedRepoRate_whenRequestMade_thenReturnRepoRateAnd200() throws Exception {
         client.get().uri("/sarb/rate/repo")
