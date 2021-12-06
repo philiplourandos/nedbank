@@ -4,7 +4,7 @@
         "SectionName": "Inflation rates",
         "TimeseriesCode": "CPI1000F",
         "Date": "2021-10-31",
-        "Value": 5.0000,
+        "Value": 5.0,
         "UpDown": 0,
         "FormatNumber": "0.0",
         "FormatDate": "MMM, yyyy"
@@ -24,7 +24,7 @@
         "SectionName": "Interest rates",
         "TimeseriesCode": "MMSD008A",
         "Date": "2021-12-02",
-        "Value": 3.7500,
+        "Value": 3.75,
         "UpDown": 0,
         "FormatNumber": "0.00",
         "FormatDate": "yyyy-MM-dd"
@@ -34,7 +34,7 @@
         "SectionName": "Interest rates",
         "TimeseriesCode": "MMSD001A",
         "Date": "2021-12-02",
-        "Value": 7.2500,
+        "Value": 7.25,
         "UpDown": 0,
         "FormatNumber": "0.00",
         "FormatDate": "yyyy-MM-dd"

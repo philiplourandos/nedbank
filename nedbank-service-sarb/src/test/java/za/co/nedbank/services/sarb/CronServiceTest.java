@@ -28,19 +28,13 @@ public class CronServiceTest {
     
     @Test
     public void givenConfiguredCron_whenTrigger_thenRetrieveSarbValuesAndCache() throws Exception {
-        //given
-        final BigDecimal cpi = new BigDecimal("5.0000");
-        final BigDecimal ppi = new BigDecimal("8.1162");
-        final BigDecimal repo = new BigDecimal("3.7500");
-        final BigDecimal prime = new BigDecimal("7.2500");
-
         final Cache sarbCache = manager.getCache(cacheName);
 
         await().atMost(40, TimeUnit.SECONDS).untilAsserted(() -> {
-            assertEquals(cpi, sarbCache.get(RateEnum.CPI.getCacheKey(), BigDecimal.class));
-            assertEquals(ppi, sarbCache.get(RateEnum.PPI.getCacheKey(), BigDecimal.class));
-            assertEquals(repo, sarbCache.get(RateEnum.REPO.getCacheKey(), BigDecimal.class));
-            assertEquals(prime, sarbCache.get(RateEnum.PRIME.getCacheKey(), BigDecimal.class));
+            assertEquals(TestConst.CPI, sarbCache.get(RateEnum.CPI.getCacheKey(), BigDecimal.class));
+            assertEquals(TestConst.PPI, sarbCache.get(RateEnum.PPI.getCacheKey(), BigDecimal.class));
+            assertEquals(TestConst.REPO, sarbCache.get(RateEnum.REPO.getCacheKey(), BigDecimal.class));
+            assertEquals(TestConst.PRIME, sarbCache.get(RateEnum.PRIME.getCacheKey(), BigDecimal.class));
         });
     }
 }
