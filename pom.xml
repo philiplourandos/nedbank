@@ -270,6 +270,7 @@
         <module>nedbank-service-sarb</module>
         <module>nedbank-service-config</module>
         <module>nedbank-service-eureka</module>
+        <module>nedbank-service-resourcebundle</module>
     </modules>
 </project>
 
