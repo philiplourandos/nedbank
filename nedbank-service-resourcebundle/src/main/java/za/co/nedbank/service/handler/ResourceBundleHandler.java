@@ -15,8 +15,8 @@ public class ResourceBundleHandler {
 
     private final ReloadableResourceBundleMessageSource resourceBundle;
 
-    public ResourceBundleHandler(final ReloadableResourceBundleMessageSource resourceBundle) {
-        this.resourceBundle = resourceBundle;
+    public ResourceBundleHandler(final ReloadableResourceBundleMessageSource bundle) {
+        this.resourceBundle = bundle;
     }
 
     public Mono<ServerResponse> getResourceBundleEntry(final ServerRequest request) {
@@ -26,12 +26,11 @@ public class ResourceBundleHandler {
             final String textValue = resourceBundle.getMessage(resourcKey, EMPTY_ARGS, Locale.ENGLISH);
 
             return ServerResponse.ok().bodyValue(new ResourceBundleResponse(textValue));
-        } catch(NoSuchMessageException noMessage) {
+        } catch (NoSuchMessageException noMessage) {
             return ServerResponse.notFound().build();
         }
     }
 }
 
 record ResourceBundleResponse(String text) {
-    
 }
