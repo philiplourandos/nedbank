@@ -1,0 +1,26 @@
+{
+    "mappings": [
+        {
+            "request": {
+                "method": "HEAD",
+                "url": "/main/nedbank-service-resourcebundle/messages_en.properties"
+            },
+            "response": {
+                "status": 200
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "/main/nedbank-service-resourcebundle/messages_en.properties"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/txt"
+                },
+                "bodyFileName": "messages.properties"
+            }
+        }
+    ]
+}
