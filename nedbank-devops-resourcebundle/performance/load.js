@@ -4,10 +4,10 @@ import {SharedArray} from 'k6/data';
 
 // Load key and expected value from file
 const data = new SharedArray('static text data', function() {
-    return JSON.parse(data.json).testresources;
+    return JSON.parse(open('data.json')).textresources;
 });
 
-const url = 'http://127.0.0.1:8080/nedbank/bpm/resourcebundle';
+const url = 'http://127.0.0.1:9080/nedbank/bpm/resourcebundle';
 const params = {
     headers: {
         'Content-Type' : 'application/json'
@@ -22,9 +22,8 @@ export const options = {
     },
     scenarios: {
         contacts: {
-            executors: 'ramping-virtual-users',
+            executor: 'ramping-vus',
             startVUs: 0,
-            iterations: data.length,
             stages: [
                 { duration: '30s',  target: 50},
                 { duration: '100s', target: 150},
@@ -37,12 +36,12 @@ export const options = {
 };
 
 export default function () {
-    const testData = data[scenario.iterationInTest];
+    const testData = data[0];
 
     const response = http.get(url + '/' + testData.key);
 
     check(response, {
         'Request successful' : (r) => r.status() === 200,
-        'Expected value returned': (r) => r.json('text') == testData.expected
+        'Expected value returned': (r) => r.json('text') === testData.expected
     });
 }
