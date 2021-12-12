@@ -3,7 +3,7 @@
         {
             "request": {
                 "method": "HEAD",
-                "url": "/main/nedbank-service-resourcebundle/messages_en.properties"
+                "url": "/nedbank-service-resourcebundle_en.properties"
             },
             "response": {
                 "status": 200
@@ -12,7 +12,7 @@
         {
             "request": {
                 "method": "GET",
-                "url": "/main/nedbank-service-resourcebundle/messages_en.properties"
+                "url": "/nedbank-service-resourcebundle_en.properties"
             },
             "response": {
                 "status": 200,
