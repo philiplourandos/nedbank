@@ -41,7 +41,7 @@ export default function () {
     const response = http.get(url + '/' + testData.key);
 
     check(response, {
-        'Request successful' : (r) => r.status() === 200,
+        'Request successful' : (r) => r.status === 200,
         'Expected value returned': (r) => r.json('text') === testData.expected
     });
 }
