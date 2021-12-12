@@ -11,9 +11,9 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-      start_period: 10s
+      start_period: 20s
     volumes:
-      - ./messages_en.properties:/opt/config
+      - ./resources:/opt/config
   resource:
     image: nedbank-service-resourcebundle:0.0.1-SNAPSHOT
     environment:
