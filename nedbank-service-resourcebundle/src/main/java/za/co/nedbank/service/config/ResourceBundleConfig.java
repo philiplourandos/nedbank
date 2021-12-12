@@ -24,7 +24,7 @@ public class ResourceBundleConfig {
     public ReloadableResourceBundleMessageSource resourceBundle(
             @Value("${spring.cloud.config.uri}") final String uri,
             @Value("${spring.application.name}") final String applicationName) {
-        final String resourceBundleUrl = String.format("%s/main/%s/messages", uri, applicationName);
+        final String resourceBundleUrl = String.format("%s/%s", uri, applicationName);
 
         final ReloadableResourceBundleMessageSource messageSource
                 = new ReloadableResourceBundleMessageSource();
