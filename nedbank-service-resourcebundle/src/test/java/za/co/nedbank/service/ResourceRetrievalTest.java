@@ -16,7 +16,7 @@ public class ResourceRetrievalTest {
     private WebTestClient webClient;
 
     @Test
-    public void givenExistingKeyInResourceBundle_whenRequested_thenReturnValueWith200() throws Exception {
+    public void givenExistingKeyInResourceBundleWhenRequestedThenReturnValueWith200() throws Exception {
         final String expectedText = "ken sent me";
 
         webClient.get()
@@ -28,7 +28,7 @@ public class ResourceRetrievalTest {
     }
 
     @Test
-    public void givenKeyNotInBundle_whenSubmitted_thenReturn404() throws Exception {
+    public void givenKeyNotInBundleWhenSubmittedThenReturn404() throws Exception {
         webClient.get()
                 .uri("/nedbank/bpm/resourcebundle/nb.cardano.statement")
                 .exchange()
