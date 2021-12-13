@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import {check, group} from 'k6';
+import {check, group, sleep} from 'k6';
 import {SharedArray} from 'k6/data';
 
 // Load key and expected value from file
@@ -18,17 +18,30 @@ const params = {
 export const options = {
     thresholds: {
         http_req_failed: ['rate < 0.5'],
-        http_req_duration: ['p(90) < 50', 'p(95) < 60', 'p(99) < 70'],
+        http_req_duration: ['p(90) < 2', 'p(95) < 5', 'p(99) < 8'],
     },
     scenarios: {
-        contacts: {
+        constRateTest: {
+            executor: 'constant-arrival-rate',
+            duration: '200s',
+            rate: 130,
+            preAllocatedVUs: 150
+        },
+        rampTest: {
             executor: 'ramping-vus',
-            startVUs: 0,
+            startVUs: 100,
+            startTime: '15s',
+            
             stages: [
-                { duration: '30s',  target: 50},
-                { duration: '100s', target: 150},
-                { duration: '50s',  target: 300},
-                { duration: '150s', target: 100}
+                { duration: '30s',  target: 10 },
+                { duration: '100s', target: 30 },
+                { duration: '150s', target: 90 },
+                { duration: '115s', target: 80 },
+                { duration: '120s', target: 60 },
+                { duration: '300s', target: 55 },
+                { duration: '400s', target: 70 },
+                { duration: '300s', target: 100 },
+                { duration: '100s', target: 120 },
             ],
             gracefulRampDown: '30s'
         }
@@ -36,12 +49,14 @@ export const options = {
 };
 
 export default function () {
-    const testData = data[0];
+    for(let index = 0; index < data.length; index++) {
+        const response = http.get(url + '/' + data[index].key);
 
-    const response = http.get(url + '/' + testData.key);
+        check(response, {
+            'Request successful' : (r) => r.status === 200,
+            'Expected value returned': (r) => r.json('text') === data[index].expected
+        });
+    }
 
-    check(response, {
-        'Request successful' : (r) => r.status === 200,
-        'Expected value returned': (r) => r.json('text') === testData.expected
-    });
+    sleep(0.2);
 }
