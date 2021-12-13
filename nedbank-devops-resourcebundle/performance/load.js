@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import {check, group, sleep} from 'k6';
+import {check, sleep} from 'k6';
 import {SharedArray} from 'k6/data';
 
 // Load key and expected value from file
@@ -49,6 +49,7 @@ export const options = {
 };
 
 export default function () {
+    // Use all keys to submit to resource bundle service.
     for(let index = 0; index < data.length; index++) {
         const response = http.get(url + '/' + data[index].key);
 
