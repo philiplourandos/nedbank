@@ -30,15 +30,15 @@ public class NoRatesTest {
     }
 
     @Test
-    public void givenNoLoadedRepoRate_whenRequestMade_thenReturn204WithNoBody() throws Exception {
+    public void givenNoLoadedRepoRateWhenRequestMadeThenReturn204WithNoBody() throws Exception {
         client.get().uri("/sarb/rate/repo")
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
                 .expectStatus().isNoContent();
     }
-    
+
     @Test
-    public void givenNoLoadedPPIRate_whenRequestMade_thenReturn204WithNoBody() throws Exception {
+    public void givenNoLoadedPPIRateWhenRequestMadeThenReturn204WithNoBody() throws Exception {
         client.get().uri("/sarb/rate/ppi")
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
@@ -46,7 +46,7 @@ public class NoRatesTest {
     }
 
     @Test
-    public void givenNoLoadedCPIRate_whenRequestMade_thenReturn204WithNoBody() throws Exception {
+    public void givenNoLoadedCPIRateWhenRequestMadeThenReturn204WithNoBody() throws Exception {
         client.get().uri("/sarb/rate/cpi")
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
@@ -54,7 +54,7 @@ public class NoRatesTest {
     }
 
     @Test
-    public void givenNoLoadedPrimeRate_whenRequestMade_thenReturn204WithNoBody() throws Exception {
+    public void givenNoLoadedPrimeRateWhenRequestMadeThenReturn204WithNoBody() throws Exception {
         client.get().uri("/sarb/rate/prime")
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()

@@ -17,16 +17,12 @@
         <spring.boot.version>2.6.1</spring.boot.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+    <modules>
+        <module>nedbank-service-sarb</module>
+        <module>nedbank-service-config</module>
+        <module>nedbank-service-eureka</module>
+        <module>nedbank-service-resourcebundle</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>
@@ -50,6 +46,17 @@
                 <version>4.1.1</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>7.0.1</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.experimental</groupId>
+                <artifactId>spring-native</artifactId>
+                <version>0.11.1-SNAPSHOT</version>
+            </dependency>
             
             <!-- fix transitive dependency conflicts -->
             <dependency>
@@ -62,6 +69,41 @@
                 <artifactId>plexus-utils</artifactId>
                 <version>3.0.18</version>
             </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>19.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-core</artifactId>
+                <version>1.19.4</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.enterprise</groupId>
+                <artifactId>cdi-api</artifactId>
+                <version>1.0-SP4</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-client</artifactId>
+                <version>1.19.4</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.woodstox</groupId>
+                <artifactId>woodstox-core</artifactId>
+                <version>6.2.6</version>
+            </dependency>
+            <dependency>
+                <groupId>com.netflix.servo</groupId>
+                <artifactId>servo-core</artifactId>
+                <version>0.12.21</version>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.core</artifactId>
+                <version>4.3.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -73,6 +115,25 @@
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring.boot.version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.springframework.experimental</groupId>
+                    <artifactId>spring-aot-maven-plugin</artifactId>
+                    <version>0.11.1-SNAPSHOT</version>
+                    <executions>
+                        <execution>
+                            <id>generate</id>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>test-generate</id>
+                            <goals>
+                                <goal>test-generate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -80,6 +141,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
+                <configuration>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -171,6 +236,7 @@
                 </dependencies>
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
+                    <sourceDirectories>${basedir}/src</sourceDirectories>
                     <suppressionsLocation>suppressions.xml</suppressionsLocation>
                 </configuration>
                 <executions>
@@ -216,7 +282,7 @@
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.80</minimum>
+                                            <minimum>0.90</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
@@ -227,8 +293,32 @@
             </build>
         </profile>
     </profiles>
-    <modules>
-        <module>nedbank-service-sarb</module>
-    </modules>
+    
+    <repositories>
+        <repository>
+            <id>spring-release</id>
+            <name>Spring release</name>
+            <url>https://repo.spring.io/release</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring milestone</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-snapshot</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
 </project>
 

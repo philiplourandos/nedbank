@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  config:
+    image: nedbank-service-config:0.0.1-SNAPSHOT
+    environment:
+      SPRING_PROFILES_ACTIVE: "native"
+    ports:
+      - "8888:8888"
+    healthcheck:
+      test: "curl --fail --silent localhost:8888/actuator/health | grep UP || exit 1"
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    volumes:
+      - ./resources:/opt/config
+  resource:
+    image: nedbank-service-resourcebundle:0.0.1-SNAPSHOT
+    environment:
+      SERVER_PORT: 9080
+    ports:
+      - "9080:9080"
+    depends_on:
+      config:
+        condition: service_healthy

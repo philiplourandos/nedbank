@@ -3,7 +3,6 @@ package za.co.nedbank.services.sarb;
 import java.util.Collections;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.mockito.Mockito.when;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,7 +28,7 @@ public class RetrieveRatesTest {
 
     @Autowired
     private CacheManager manager;
-    
+
     @Value("${spring.cache.cache-names}")
     private String cacheName;
 
@@ -46,9 +45,9 @@ public class RetrieveRatesTest {
 
         when(sarbClient.getRates()).thenReturn(Collections.EMPTY_LIST);
     }
-    
+
     @Test
-    public void givenLoadedRepoRate_whenRequestMade_thenReturnRepoRateAnd200() throws Exception {
+    public void givenLoadedRepoRateWhenRequestMadeThenReturnRepoRateAnd200() throws Exception {
         client.get().uri("/sarb/rate/repo")
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
@@ -58,7 +57,7 @@ public class RetrieveRatesTest {
     }
 
     @Test
-    public void givenLoadedPPIRate_whenRequestMade_thenReturnPPIRateAnd200() throws Exception {
+    public void givenLoadedPPIRateWhenRequestMadeThenReturnPPIRateAnd200() throws Exception {
         client.get().uri("/sarb/rate/ppi")
                 .exchange()
                 .expectStatus().isOk()
@@ -67,7 +66,7 @@ public class RetrieveRatesTest {
     }
 
     @Test
-    public void givenLoadedCPIRate_whenRequestMade_thenReturnCPIRateAnd200() throws Exception {
+    public void givenLoadedCPIRateWhenRequestMadeThenReturnCPIRateAnd200() throws Exception {
         client.get().uri("/sarb/rate/cpi")
                 .exchange()
                 .expectStatus().isOk()
@@ -76,7 +75,7 @@ public class RetrieveRatesTest {
     }
 
     @Test
-    public void givenLoadedPrimeRate_whenRequestMade_thenReturnPrimeRateAnd200() throws Exception {
+    public void givenLoadedPrimeRateWhenRequestMadeThenReturnPrimeRateAnd200() throws Exception {
         client.get().uri("/sarb/rate/prime")
                 .exchange()
                 .expectStatus().isOk()
@@ -85,7 +84,7 @@ public class RetrieveRatesTest {
     }
 
     @Test
-    public void givenInvalidRateType_whenRequestMade_thenReturnWith404() throws Exception {
+    public void givenInvalidRateTypeWhenRequestMadeThenReturnWith404() throws Exception {
         client.get().uri("/sarb/rate/blah")
                 .exchange()
                 .expectStatus().isNotFound();

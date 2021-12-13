@@ -38,6 +38,7 @@
 
   <!-- The Check generates too many violations, fixing them will make code unmanageable. -->
   <suppress checks="MagicNumber" files="(ParseTreeTablePresentation|MainFrame)\.java"/>
+  <suppress checks="MagicNumber" files="\\*Test\.java"/>
 
   <!-- Methods that build fake AST are very long -->
   <suppress checks="MethodLength" files=".*(Generated)?Java(doc)?TokenTypesTest\.java"/>
