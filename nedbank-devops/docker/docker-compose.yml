@@ -23,3 +23,28 @@ services:
     depends_on:
       config:
         condition: service_healthy
+  sarb:
+    image: nedbank-service-sarb:0.0.1-SNAPSHOT
+    ports:
+      - "9081:9081"
+    environment:
+      SERVER_PORT: 9081
+  grafana:
+    image: grafana/grafana:8.3.3-ubuntu
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: user
+      GF_SECURITY_ADMIN_PASSWORD: password
+    volumes:
+    - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+    - ./grafana/dashboards:/etc/grafana/provisioning/dashboards
+  prometheus:
+    image: prom/prometheus:v2.32.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/config.yml:/etc/prometheus/prometheus.yml
+
