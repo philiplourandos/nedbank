@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import {check} from 'k6';
 
-const uri = 'http://127.0.0.1:8080/sarb/rate';
+const uri = 'http://127.0.0.1:9081/sarb/rate';
 
 //Options for k6 to use while running tests
 export const options = {
