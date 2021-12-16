@@ -9,4 +9,13 @@ scrape_configs:
   - job_name: 'nedbank-service-resourcebundle'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['resource:9081']
+      - targets: ['resource:9080']
+  - job_name: 'nedbank-service-config'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['config:8888']
+  - job_name: 'nedbank-service-eureka'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - target: ['ereuka:9082']
+
