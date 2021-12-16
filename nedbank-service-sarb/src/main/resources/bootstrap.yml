@@ -4,4 +4,4 @@ spring:
         name: nedbank-sarb-service
     cloud:
         config:
-            url: http://config:8888
+            uri: http://config:8888
