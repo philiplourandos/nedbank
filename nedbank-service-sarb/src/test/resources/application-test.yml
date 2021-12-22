@@ -1,5 +1,8 @@
 ## YAML Template.
 ---
+spring:
+    cache:
+        cache-names: rates
 za:
     co:
         nedbank:
