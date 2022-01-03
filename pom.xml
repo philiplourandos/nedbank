@@ -193,9 +193,6 @@
                         <requireMavenVersion>
                             <version>[3.8.4,)</version>
                         </requireMavenVersion>
-                        <requireReleaseDeps>
-                            <message>Project requires no snapshot dependencies</message>
-                        </requireReleaseDeps>
                     </rules>
                 </configuration>
             </plugin>
