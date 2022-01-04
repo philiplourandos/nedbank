@@ -1,6 +1,5 @@
 package za.co.nedbank.service.sarb;
 
-import za.co.nedbank.service.sarb.RateEnum;
 import java.util.Collections;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

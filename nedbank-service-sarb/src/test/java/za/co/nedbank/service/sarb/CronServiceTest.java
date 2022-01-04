@@ -1,6 +1,5 @@
 package za.co.nedbank.service.sarb;
 
-import za.co.nedbank.service.sarb.RateEnum;
 import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
