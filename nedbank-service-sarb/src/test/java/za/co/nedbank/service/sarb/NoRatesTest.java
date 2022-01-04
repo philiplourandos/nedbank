@@ -1,4 +1,4 @@
-package za.co.nedbank.services.sarb;
+package za.co.nedbank.service.sarb;
 
 import java.util.Collections;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,7 +9,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import za.co.nedbank.services.sarb.client.SarbClient;
+import za.co.nedbank.service.sarb.client.SarbClient;
 
 import static org.mockito.Mockito.when;
 
