@@ -1,4 +1,4 @@
-package za.co.nedbank.services.sarb.service;
+package za.co.nedbank.service.sarb.service;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -10,9 +10,9 @@ import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import za.co.nedbank.services.sarb.RateEnum;
-import za.co.nedbank.services.sarb.client.SarbClient;
-import za.co.nedbank.services.sarb.model.Rate;
+import za.co.nedbank.service.sarb.RateEnum;
+import za.co.nedbank.service.sarb.client.SarbClient;
+import za.co.nedbank.service.sarb.model.Rate;
 
 @Service
 public class SarbService {

@@ -1,4 +1,4 @@
-package za.co.nedbank.services.sarb.model;
+package za.co.nedbank.service.sarb.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;

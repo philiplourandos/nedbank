@@ -1,4 +1,4 @@
-package za.co.nedbank.services.sarb;
+package za.co.nedbank.service.sarb;
 
 public enum RateEnum {
     PPI("sarb.ppi", "PPI"), CPI("sarb.cpi", "CPI"), REPO("sarb.repo", "Repo rate"),

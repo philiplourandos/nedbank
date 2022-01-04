@@ -1,4 +1,4 @@
-package za.co.nedbank.services.sarb.config;
+package za.co.nedbank.service.sarb.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.codec.Decoder;
@@ -12,7 +12,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import za.co.nedbank.services.sarb.handler.GetRateHandler;
+import za.co.nedbank.service.sarb.handler.GetRateHandler;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;

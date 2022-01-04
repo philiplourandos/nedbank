@@ -1,4 +1,4 @@
-package za.co.nedbank.services.sarb;
+package za.co.nedbank.service.sarb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

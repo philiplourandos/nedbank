@@ -1,4 +1,4 @@
-package za.co.nedbank.services.sarb.handler;
+package za.co.nedbank.service.sarb.handler;
 
 import java.math.BigDecimal;
 import java.util.Optional;
@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
-import za.co.nedbank.services.sarb.RateEnum;
-import za.co.nedbank.services.sarb.model.RateResponse;
-import za.co.nedbank.services.sarb.service.SarbService;
+import za.co.nedbank.service.sarb.RateEnum;
+import za.co.nedbank.service.sarb.model.RateResponse;
+import za.co.nedbank.service.sarb.service.SarbService;
 
 @Component
 public class GetRateHandler {
