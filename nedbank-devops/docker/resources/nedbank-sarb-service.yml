@@ -1,0 +1,11 @@
+---
+spring:
+    cache:
+        cache-names: sarb-rates
+za:
+    co:
+        nedbank:
+            service:
+                sarb:
+                    url: https://custom.resbank.co.za
+                    cron: 0 0 23 * * ?

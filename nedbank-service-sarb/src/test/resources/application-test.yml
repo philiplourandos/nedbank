@@ -1,5 +1,11 @@
 ## YAML Template.
 ---
+spring:
+    cache:
+        cache-names: rates
+    cloud:
+        config:
+            enabled: false
 za:
     co:
         nedbank:
