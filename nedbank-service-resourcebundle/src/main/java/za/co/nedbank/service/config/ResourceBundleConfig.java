@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import za.co.nedbank.service.handler.ResourceBundleHandler;
@@ -21,6 +22,7 @@ public class ResourceBundleConfig {
     }
 
     @Bean
+    @RefreshScope
     public ReloadableResourceBundleMessageSource resourceBundle(
             @Value("${spring.cloud.config.uri}") final String uri,
             @Value("${spring.application.name}") final String applicationName) {
