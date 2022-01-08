@@ -3,7 +3,7 @@ services:
   config:
     image: nedbank-service-config:0.0.1-SNAPSHOT
     environment:
-      SPRING_PROFILES_ACTIVE: "native"
+      SPRING_PROFILES_ACTIVE: "git"
     ports:
       - "8888:8888"
     healthcheck:
@@ -13,7 +13,7 @@ services:
       retries: 5
       start_period: 20s
     volumes:
-      - ./resources:/opt/config
+      - /home/phil/dev/projects/nedbank-poc-config:/opt/config
   resource:
     image: nedbank-service-resourcebundle:0.0.1-SNAPSHOT
     environment:
@@ -32,15 +32,6 @@ services:
     depends_on:
       config:
         condition: service_healthy
-  eureka:
-    image: nedbank-service-eureka:0.0.1-SNAPSHOT
-    ports:
-      - "9082:9082"
-    environment:
-      SERVER_PORT: 9082
-    depends_on:
-      config:
-        condition: service_healthy
   grafana:
     image: grafana/grafana:8.3.3-ubuntu
     depends_on:
@@ -54,7 +45,7 @@ services:
     - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
     - ./grafana/dashboards:/etc/grafana/provisioning/dashboards
   prometheus:
-    image: prom/prometheus:v2.32.0
+    image: prom/prometheus:v2.32.1
     ports:
       - "9090:9090"
     volumes:
