@@ -1,6 +1,7 @@
 package za.co.nedbank.service.sarb;
 
 import java.util.Collections;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import za.co.nedbank.service.sarb.client.SarbClient;
+import za.co.nedbank.service.sarb.model.Rate;
 
 import static org.mockito.Mockito.when;
 
@@ -26,7 +28,9 @@ public class NoRatesTest {
 
     @BeforeEach
     public void setup() {
-        when(sarbClient.getRates()).thenReturn(Collections.EMPTY_LIST);
+        final List<Rate> noRates = Collections.emptyList();
+
+        when(sarbClient.getRates()).thenReturn(noRates);
     }
 
     @Test
