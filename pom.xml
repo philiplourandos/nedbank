@@ -280,6 +280,7 @@
                                 <id>report</id>
                                 <phase>prepare-package</phase>
                                 <goals>
+                                    <goal>check</goal>
                                     <goal>report</goal>
                                 </goals>
                             </execution>
@@ -287,12 +288,33 @@
                         <configuration>
                             <rules>
                                 <rule>
-                                    <element>PACKAGE</element>
+                                    <excludes>
+                                        <exclude>**.*Application</exclude>
+                                    </excludes>
+                                    <element>BUNDLE</element>
+                                    <limits>
+                                        <limit>
+                                            <counter>INSTRUCTION</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.85</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>CLASS</counter>
+                                            <value>MISSEDCOUNT</value>
+                                            <maximum>0</maximum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                                <rule>
+                                    <excludes>
+                                        <exclude>**.*Application</exclude>
+                                    </excludes>
+                                    <element>CLASS</element>
                                     <limits>
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.95</minimum>
+                                            <minimum>0.85</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
