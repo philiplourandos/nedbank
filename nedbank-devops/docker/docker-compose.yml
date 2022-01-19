@@ -42,8 +42,8 @@ services:
       GF_SECURITY_ADMIN_USER: user
       GF_SECURITY_ADMIN_PASSWORD: password
     volumes:
-    - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
-    - ./grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards
   prometheus:
     image: prom/prometheus:v2.32.1
     ports:
