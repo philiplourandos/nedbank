@@ -1,0 +1,31 @@
+openapi: "3.0.3"
+info:
+  title: Static text retriever
+  description: With a given key the corresponding managed text will be returned
+  version: "1.0"
+paths:
+  /nedbank/bpm/resourcebundle/{key}:
+    get:
+      parameters:
+        - in: path
+          description: Lookup key to retrieve static text for
+          name: key
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Text for supplied lookup key returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StaticText'
+        '404':
+          description: Supplied key is not used
+components:
+  schemas:
+    StaticText:
+      type: object
+      properties:
+        text:
+          type: string
