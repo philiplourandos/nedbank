@@ -1,4 +1,6 @@
 ---
+encryption:
+  key: 6zF6EVA2^eZRFBN!svJu2m57GJSYDdEy585+2%C?_JrbK*pCga5=yWLKXK!C-4shrNYGSV
 server:
   port: 8888
 spring:
