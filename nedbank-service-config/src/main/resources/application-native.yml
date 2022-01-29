@@ -9,3 +9,8 @@ spring:
       server:
         native:
           searchLocations: file:/opt/config
+  rabbitmq:
+    host: rabbit
+    port: 5672
+    username: guest
+    password: guest
