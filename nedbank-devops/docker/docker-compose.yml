@@ -1,9 +1,15 @@
 version: "3.9"
 services:
+  rabbit:
+    image: rabbitmq:3.9.13
+    ports:
+      - "5672:5672"
+    volumes:
+      - ./rabbitmq:/etc/rabbitmq
   config:
     image: nedbank-service-config:0.0.1-SNAPSHOT
     environment:
-      SPRING_PROFILES_ACTIVE: "git"
+      SPRING_PROFILES_ACTIVE: "native"
     ports:
       - "8888:8888"
     healthcheck:
