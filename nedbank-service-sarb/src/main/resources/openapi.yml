@@ -1,0 +1,41 @@
+openapi: "3.0.3"
+info:
+  title: SARB rates API
+  description: API for retrieving rates published by the South African Reserve Bank
+  version: "1.0"
+paths:
+  /sarb/rate/{type}:
+    get:
+      summary: Get the specified SARB rate
+      parameters:
+        - in: path
+          description: The rate that is required
+          name: type
+          required: true
+          schema:
+            type: string
+            enum:
+              - repo
+              - ppi
+              - cpi
+              - prime
+      responses:
+        '200':
+          description: Found rate successfully returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Rate'
+        '404':
+          description: Specified rate type is not catered for
+        '204':
+          description: Valid rate type but data not loaded
+
+components:
+  schemas:
+    Rate:
+      type: object
+      properties:
+        rate:
+          type: number
+          format: float
