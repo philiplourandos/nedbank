@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.2.xsd">
+   <suppress>
+      <notes><![CDATA[We're not persisting sessions to file store]]></notes>
+      <cve>CVE-2022-23181</cve>
+   </suppress>
+   <suppress>
+      <notes><![CDATA[We're not using xml. The jsoup libarary is far down in the list of dependencies. The artifact we are pulling is the rabbitmq streamer.]]></notes>
+      <cve>CVE-2021-37714</cve>
+   </suppress>
+</suppressions>
