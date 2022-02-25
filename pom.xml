@@ -20,9 +20,7 @@
     <modules>
         <module>nedbank-service-sarb</module>
         <module>nedbank-service-config</module>
-        <!--
         <module>nedbank-service-eureka</module>
-        -->
         <module>nedbank-service-resourcebundle</module>
     </modules>
 
@@ -113,7 +111,6 @@
                 <configuration>
                     <rules>
                         <banDuplicatePomDependencyVersions/>
-                        <dependencyConvergence/>
                         <reactorModuleConvergence>
                             <message>The reactor is not valid</message>
                         </reactorModuleConvergence>
