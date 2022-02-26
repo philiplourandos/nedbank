@@ -6,5 +6,5 @@ import subprocess
 
 for subdir in os.listdir("."):
     if os.path.isdir(subdir):
-        dockerCmd = subprocess.Popen(['docker', 'build', '-t', "nedbank/bpmxjee-" + subdir + ":latest", '-f', 'Dockerfile', subdir])
+        dockerCmd = subprocess.run(['docker', 'build', '-t', "nedbank/bpmxjee-" + subdir + ":latest", '-f', 'Dockerfile', subdir])
 
