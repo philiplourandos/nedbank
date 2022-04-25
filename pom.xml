@@ -22,6 +22,7 @@
         <module>nedbank-service-config</module>
         <module>nedbank-service-eureka</module>
         <module>nedbank-service-resourcebundle</module>
+        <module>nedbank-service-case-archiving</module>
     </modules>
 
     <dependencyManagement>
@@ -37,6 +38,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>2021.0.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers-bom</artifactId>
+                <version>1.17.1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -346,6 +354,5 @@
             <url>https://gitlab.com/api/v4/projects/19871573/packages/maven</url>
         </pluginRepository>
     </pluginRepositories>
-
 </project>
 
