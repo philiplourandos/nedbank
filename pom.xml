@@ -44,7 +44,7 @@
             <dependency>
                 <groupId>com.azure.spring</groupId>
                 <artifactId>spring-cloud-azure-dependencies</artifactId>
-                <version>4.0.0</version>
+                <version>4.1.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -273,7 +273,7 @@
                     <plugin>
                         <groupId>org.pitest</groupId>
                         <artifactId>pitest-maven</artifactId>
-                        <version>1.7.5</version>
+                        <version>1.7.6</version>
                         <dependencies>
                             <dependency>
                                 <groupId>org.pitest</groupId>
