@@ -10,13 +10,13 @@
     <artifactId>nedbank-service-case-archiving</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-batch</artifactId>
         </dependency>
-        
+
         <!-- runtime dependencies -->
         <dependency>
             <groupId>com.ibm.db2</groupId>
@@ -48,7 +48,7 @@
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
             <scope>runtime</scope>
         </dependency>
-        
+
         <!-- Test dependencies -->
         <dependency>
             <groupId>org.testcontainers</groupId>
