@@ -14,12 +14,12 @@ services:
       - "8888:8888"
     healthcheck:
       test: "curl --fail --silent localhost:8888/actuator/health | grep UP || exit 1"
-      interval: 5s
+      interval: 10s
       timeout: 5s
       retries: 5
       start_period: 20s
     volumes:
-      - /home/phil/dev/projects/nedbank-poc-config:/opt/config
+      - /home/lore/dev/projects/nedbank/nedbank-config:/opt/config
   resource:
     image: nedbank-service-resourcebundle:0.0.1-SNAPSHOT
     environment:
@@ -55,7 +55,7 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - ./prometheus/config.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
   kibana:
     image: kibana:8.2.0
   fluentd:
