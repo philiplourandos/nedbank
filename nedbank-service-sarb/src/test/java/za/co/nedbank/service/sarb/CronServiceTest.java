@@ -1,5 +1,8 @@
 package za.co.nedbank.service.sarb;
 
+import static org.awaitility.Awaitility.await;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
@@ -12,13 +15,13 @@ import org.springframework.cache.CacheManager;
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 import org.springframework.test.context.ActiveProfiles;
 
-import static org.awaitility.Awaitility.await;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-@SpringBootTest(properties = {"za.co.nedbank.service.sarb.url=http://localhost:${wiremock.server.port}"},
+@SpringBootTest(
+        properties = {"za.co.nedbank.service.sarb.url=http://localhost:${wiremock.server.port}"},
         webEnvironment = WebEnvironment.NONE)
 @ActiveProfiles({"test"})
-@AutoConfigureWireMock(files = {"classpath:/stubs"}, port = 0)
+@AutoConfigureWireMock(
+        files = {"classpath:/stubs"},
+        port = 0)
 public class CronServiceTest {
     private static final int WAIT_TIME = 40;
 

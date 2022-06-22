@@ -8,6 +8,5 @@ public final class TestConst {
     public static final BigDecimal REPO = new BigDecimal("3.75");
     public static final BigDecimal PRIME = new BigDecimal("7.25");
 
-    private TestConst() {
-    }
+    private TestConst() {}
 }

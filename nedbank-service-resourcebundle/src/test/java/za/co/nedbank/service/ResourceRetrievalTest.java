@@ -9,7 +9,9 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles({"test"})
-@AutoConfigureWireMock(files = {"classpath:/stubs"}, port = 8888)
+@AutoConfigureWireMock(
+        files = {"classpath:/stubs"},
+        port = 8888)
 public class ResourceRetrievalTest {
 
     @Autowired
@@ -19,19 +21,24 @@ public class ResourceRetrievalTest {
     public void givenExistingKeyInResourceBundleWhenRequestedThenReturnValueWith200() throws Exception {
         final String expectedText = "ken sent me";
 
-        webClient.get()
+        webClient
+                .get()
                 .uri("/nedbank/bpm/resourcebundle/rrb.test")
                 .exchange()
-                .expectStatus().isOk()
+                .expectStatus()
+                .isOk()
                 .expectBody()
-                .jsonPath("$.text").isEqualTo(expectedText);
+                .jsonPath("$.text")
+                .isEqualTo(expectedText);
     }
 
     @Test
     public void givenKeyNotInBundleWhenSubmittedThenReturn404() throws Exception {
-        webClient.get()
+        webClient
+                .get()
                 .uri("/nedbank/bpm/resourcebundle/nb.cardano.statement")
                 .exchange()
-                .expectStatus().isNotFound();
+                .expectStatus()
+                .isNotFound();
     }
 }

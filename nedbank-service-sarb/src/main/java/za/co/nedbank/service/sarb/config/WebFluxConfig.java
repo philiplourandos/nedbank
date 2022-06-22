@@ -1,5 +1,8 @@
 package za.co.nedbank.service.sarb.config;
 
+import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
+import static org.springframework.web.reactive.function.server.RouterFunctions.route;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.codec.Decoder;
 import org.springframework.beans.factory.ObjectFactory;
@@ -13,9 +16,6 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import za.co.nedbank.service.sarb.handler.GetRateHandler;
-
-import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
-import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration(proxyBeanMethods = false)
 public class WebFluxConfig {

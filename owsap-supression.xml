@@ -8,4 +8,20 @@
       <notes><![CDATA[We're not using xml. The jsoup libarary is far down in the list of dependencies. The artifact we are pulling is the rabbitmq streamer.]]></notes>
       <cve>CVE-2021-37714</cve>
    </suppress>
+   <suppress>
+      <notes><![CDATA[Using Rabbitmq 3.9.17(at the time) which is not affected by this CVE.]]></notes>
+      <cve>CVE-2020-5419</cve>
+   </suppress>
+   <suppress>
+      <notes><![CDATA[Using Rabbitmq 3.9.17(at the time) which is not affected by this CVE.]]></notes>
+      <cve>CVE-2018-11087</cve>
+   </suppress>
+   <suppress>
+      <notes><![CDATA[Using Rabbitmq 3.9.17(at the time) which is not affected by this CVE.]]></notes>
+      <cve>CVE-2018-11087</cve>
+   </suppress>
+   <suppress>
+      <notes><![CDATA[Using Rabbitmq 3.9.17(at the time) which is not affected by this CVE.]]></notes>
+      <cve>CVE-2014-9494</cve>
+   </suppress>
 </suppressions>

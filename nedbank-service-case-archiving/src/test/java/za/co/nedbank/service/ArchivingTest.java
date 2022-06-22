@@ -16,12 +16,10 @@ public class ArchivingTest {
     private static final Db2Container DB2 = new Db2Container("ibmcom/db2:11.5.7.0a");
 
     @Test
-    public void givenValidDataWhenSelectedThenSuccessfullyArchive() throws Exception {
-    }
+    public void givenValidDataWhenSelectedThenSuccessfullyArchive() throws Exception {}
 
     @Test
-    public void givenBpmGeneratesAFaultWhenJobRunsThenLogFailure() throws Exception {
-    }
+    public void givenBpmGeneratesAFaultWhenJobRunsThenLogFailure() throws Exception {}
 
     @DynamicPropertySource
     static final void register(final DynamicPropertyRegistry registry) {

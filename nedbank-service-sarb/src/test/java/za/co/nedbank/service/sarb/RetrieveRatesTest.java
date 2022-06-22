@@ -1,5 +1,7 @@
 package za.co.nedbank.service.sarb;
 
+import static org.mockito.Mockito.when;
+
 import java.util.Collections;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,9 +19,8 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import za.co.nedbank.service.sarb.client.SarbClient;
 import za.co.nedbank.service.sarb.model.Rate;
 
-import static org.mockito.Mockito.when;
-
-@SpringBootTest(properties = {"za.co.nedbank.service.sarb.url=8888"},
+@SpringBootTest(
+        properties = {"za.co.nedbank.service.sarb.url=8888"},
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles({"test"})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
@@ -52,45 +53,55 @@ public class RetrieveRatesTest {
 
     @Test
     public void givenLoadedRepoRateWhenRequestMadeThenReturnRepoRateAnd200() throws Exception {
-        client.get().uri("/sarb/rate/repo")
+        client.get()
+                .uri("/sarb/rate/repo")
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
-                .expectStatus().isOk()
+                .expectStatus()
+                .isOk()
                 .expectBody()
-                .jsonPath("$.rate").isEqualTo(TestConst.REPO);
+                .jsonPath("$.rate")
+                .isEqualTo(TestConst.REPO);
     }
 
     @Test
     public void givenLoadedPPIRateWhenRequestMadeThenReturnPPIRateAnd200() throws Exception {
-        client.get().uri("/sarb/rate/ppi")
+        client.get()
+                .uri("/sarb/rate/ppi")
                 .exchange()
-                .expectStatus().isOk()
+                .expectStatus()
+                .isOk()
                 .expectBody()
-                .jsonPath("$.rate").isEqualTo(TestConst.PPI);
+                .jsonPath("$.rate")
+                .isEqualTo(TestConst.PPI);
     }
 
     @Test
     public void givenLoadedCPIRateWhenRequestMadeThenReturnCPIRateAnd200() throws Exception {
-        client.get().uri("/sarb/rate/cpi")
+        client.get()
+                .uri("/sarb/rate/cpi")
                 .exchange()
-                .expectStatus().isOk()
+                .expectStatus()
+                .isOk()
                 .expectBody()
-                .jsonPath("$.rate").isEqualTo(TestConst.CPI);
+                .jsonPath("$.rate")
+                .isEqualTo(TestConst.CPI);
     }
 
     @Test
     public void givenLoadedPrimeRateWhenRequestMadeThenReturnPrimeRateAnd200() throws Exception {
-        client.get().uri("/sarb/rate/prime")
+        client.get()
+                .uri("/sarb/rate/prime")
                 .exchange()
-                .expectStatus().isOk()
+                .expectStatus()
+                .isOk()
                 .expectBody()
-                .jsonPath("$.rate").isEqualTo(TestConst.PRIME);
+                .jsonPath("$.rate")
+                .isEqualTo(TestConst.PRIME);
     }
 
     @Test
     public void givenInvalidRateTypeWhenRequestMadeThenReturnWith404() throws Exception {
-        client.get().uri("/sarb/rate/blah")
-                .exchange()
-                .expectStatus().isNotFound();
+        client.get().uri("/sarb/rate/blah").exchange().expectStatus().isNotFound();
     }
 }
