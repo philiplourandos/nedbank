@@ -14,7 +14,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring.boot.version>2.7.0</spring.boot.version>
+        <spring.boot.version>2.7.1</spring.boot.version>
     </properties>
 
     <modules>
@@ -168,36 +168,6 @@
                     </includeOnlyProperties>
                     <commitIdGenerationMode>full</commitIdGenerationMode>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.2</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.puppycrawl.tools</groupId>
-                        <artifactId>checkstyle</artifactId>
-                        <version>10.3</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.github.sevntu-checkstyle</groupId>
-                        <artifactId>sevntu-checks</artifactId>
-                        <version>1.42.0</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <configLocation>checkstyle.xml</configLocation>
-                    <sourceDirectories>${basedir}/src</sourceDirectories>
-                    <suppressionsLocation>suppressions.xml</suppressionsLocation>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
