@@ -1,7 +1,9 @@
 package za.co.nedbank.service.sarb;
 
 public enum RateEnum {
-    PPI("sarb.ppi", "PPI"), CPI("sarb.cpi", "CPI"), REPO("sarb.repo", "Repo rate"),
+    PPI("sarb.ppi", "PPI"),
+    CPI("sarb.cpi", "CPI"),
+    REPO("sarb.repo", "Repo rate"),
     PRIME("sarb.prime", "Prime lending rate (predominant rate)");
 
     private final String cacheKey;

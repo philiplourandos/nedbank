@@ -14,8 +14,4 @@ scrape_configs:
     metrics_path: '/actuator/prometheus'
     static_configs:
       - targets: ['config:8888']
-  - job_name: 'nedbank-service-eureka'
-    metrics_path: '/actuator/prometheus'
-    static_configs:
-      - target: ['ereuka:9082']
 

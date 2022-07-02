@@ -56,8 +56,12 @@ public class SarbService {
             sarbCache.put(RateEnum.REPO.getCacheKey(), repo.get().rateValue());
 
             LOG.info("Populated cache with SARB rates");
-            LOG.info("CPI: [{}], PPI: [{}], REPO: [{}], PRIME: [{}]", cpi.get().rateValue(),
-                    ppi.get().rateValue(), repo.get().rateValue(), prime.get().rateValue());
+            LOG.info(
+                    "CPI: [{}], PPI: [{}], REPO: [{}], PRIME: [{}]",
+                    cpi.get().rateValue(),
+                    ppi.get().rateValue(),
+                    repo.get().rateValue(),
+                    prime.get().rateValue());
         } else {
             LOG.warn("No rates!");
         }
@@ -68,8 +72,5 @@ public class SarbService {
         final Cache reqCache = manager.getCache(cacheName);
 
         return Optional.ofNullable(reqCache.get(rateEnum.getCacheKey(), BigDecimal.class));
-
     }
-
-
 }

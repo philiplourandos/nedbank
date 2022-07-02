@@ -32,5 +32,4 @@ public class ResourceBundleHandler {
     }
 }
 
-record ResourceBundleResponse(String text) {
-}
+record ResourceBundleResponse(String text) {}

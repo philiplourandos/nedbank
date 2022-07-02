@@ -58,7 +58,7 @@
                         <version>3.2.1</version>
                         <configuration>
                             <from>
-                                <image>openjdk:17.0.3-jdk-bullseye</image>
+                                <image>openjdk:17.0.2-jdk-bullseye</image>
                             </from>
                             <to>
                                 <image>${project.artifactId}:${project.version}</image>
