@@ -2,6 +2,8 @@
 
 This is a proof of concept(POC) for nedbank to develop a micro-service to retrieve rates that the South African Reserve Bank(SARB) publish. Currently these values seem to be hard coded in the various applications and requires a redeployment of the applications.
 
+NOTE: In real life we'd just use squid cache as a proxy to cache the results from the SARB and have the cache expire at the end of each day. This is overkill and adds more code to manage
+
 # Feature requirements
 
 * We need a cron process to retrieve the latest rates and store in and in memory cache
