@@ -10,7 +10,7 @@ NOTE: In real life we'd just use squid cache as a proxy to cache the results fro
 * On startup of the application we need to retrieve the rates from SARB
 * We need an API to allow services in the bank to retrieve the required rates 
 
-# Non function requirements
+# Non functional requirements
 
 * We want the service to adhere to good design principals
 * We want test code
